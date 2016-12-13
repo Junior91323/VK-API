@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,6 +24,14 @@ namespace VKMusic
         public MainWindow()
         {
             InitializeComponent();
+            webBrowser.Visibility = Visibility.Visible;
+            webBrowser.Navigate(String.Format("https://oauth.vk.com/authorize?client_id={0}&scope={1}&redirect_uri={2}&display=page&response_type=token", ConfigurationSettings.AppSettings["VKAppId"], ConfigurationSettings.AppSettings["VKScope"], ConfigurationSettings.AppSettings["VKRedirectUri"])); 
+
+        }
+
+        private void btnSearch_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
