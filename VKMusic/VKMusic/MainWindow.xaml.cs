@@ -32,12 +32,12 @@ namespace VKMusic
             InitializeComponent();
             webBrowser.Visibility = Visibility.Visible;
             webBrowser.Navigate(String.Format("https://oauth.vk.com/authorize?client_id={0}&scope={1}&redirect_uri={2}&display=page&response_type=token", ConfigurationSettings.AppSettings["VKAppId"], ConfigurationSettings.AppSettings["VKScope"], ConfigurationSettings.AppSettings["VKRedirectUri"]));
-            
+
         }
 
         private void btnSearch_Click(object sender, RoutedEventArgs e)
         {
-            
+
         }
 
         private void webBrowser_Navigated(object sender, NavigationEventArgs e)
@@ -49,9 +49,11 @@ namespace VKMusic
             if (VK.AccessToken != null && VK.UserId != null)
             {
                 webBrowser.Visibility = Visibility.Hidden;
+                var a = Audio.GetList(String.Format("https://api.vk.com/method/audio.search?uid={0}&q={1}&access_token={2}", VK.UserId, "beatles",VK.AccessToken));
             }
+            
         }
 
-        
+
     }
 }

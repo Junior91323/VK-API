@@ -44,6 +44,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Managers\ItemManager.cs" />
+    <Compile Include="Managers\ListManager.cs" />
+    <Compile Include="Interfaces\IApiItem.cs" />
+    <Compile Include="Interfaces\IApiList.cs" />
     <Compile Include="Models\Audio.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Models\VKResponse.cs" />
@@ -53,6 +57,7 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

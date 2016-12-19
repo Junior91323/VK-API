@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace VKMusic.Models
+namespace VKApi.Interfaces
 {
-    public class VKResponse<T> where T: class
+    public interface IApiList : IApiItem
     {
-        public T[] response { get; set; }
     }
 }
